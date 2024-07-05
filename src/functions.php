@@ -48,3 +48,20 @@ function compareTimeDurations($time1, $time2)
 
     return $toMinutes($time1) <=> $toMinutes($time2);
 }
+
+//    DUMP VARIABLES
+
+function dd($vlaue)
+{
+    echo '<pre>';
+    var_dump($vlaue);
+    echo '</pre>';
+
+    die();
+}
+
+//    UTILS
+function urlIs($value)
+{
+    return $_SERVER['REQUEST_URI'] === $value;
+}

@@ -24,6 +24,10 @@
     transition: background-color 0.3s;
 }
 
+.nav__link-current {
+    background-color: #333333;
+}
+
 .nav__link:hover {
     background-color: #555;
 }
