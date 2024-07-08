@@ -1,8 +1,12 @@
 <?php
 
-require "../src/data.php";
-require "../src/functions.php";
+require __DIR__ . '/../src/config.php';
 
-sortItems($tasks, 'priority', 'desc');
+require BASE_PATH . "/src/data.php";
+require BASE_PATH . "/src/functions.php";
 
-require "../views/index.view.php";
+require "router.php";
+
+
+
+

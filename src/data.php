@@ -1,14 +1,14 @@
 <?php
 
-$tasks = [
-    ['title' => "Working", 'time' => "8h", 'priority' => "High", 'deadline' => "2024-07-15"],
-    ['title' => "Cooking", 'time' => "1h", 'priority' => "Medium", 'deadline' => "2024-07-10"],
-    ['title' => "Tidying", 'time' => "30min", 'priority' => "Low", 'deadline' => "2024-07-12"],
-    ['title' => "Cleaning", 'time' => "2h", 'priority' => "High", 'deadline' => "2024-07-11"],
-    ['title' => "Grocery", 'time' => "1h", 'priority' => "Medium", 'deadline' => "2024-07-09"]
+$tasksData = [
+    ['name' => "Working", 'time' => "8h", 'priority' => "High", 'deadline' => "2023-07-15"],
+    ['name' => "Cooking", 'time' => "1h", 'priority' => "Medium", 'deadline' => "2020-08-10"],
+    ['name' => "Tidying", 'time' => "30min", 'priority' => "Low", 'deadline' => "2023-07-12"],
+    ['name' => "Cleaning", 'time' => "2h", 'priority' => "High", 'deadline' => "2024-07-11"],
+    ['name' => "Grocery", 'time' => "1h", 'priority' => "Medium", 'deadline' => "2024-02-09"]
 ];
 
-$meals = [
+$mealsData = [
     ['name' => "Pasta Carbonara", 'cookingTime' => 30, 'calories' => 600, 'difficulty' => "Medium"],
     ['name' => "Caesar Salad", 'cookingTime' => 15, 'calories' => 350, 'difficulty' => "Easy"],
     ['name' => "Beef Stir Fry", 'cookingTime' => 25, 'calories' => 450, 'difficulty' => "Medium"],
@@ -16,7 +16,7 @@ $meals = [
     ['name' => "Grilled Salmon", 'cookingTime' => 20, 'calories' => 400, 'difficulty' => "Medium"]
 ];
 
-$books = [
+$booksData = [
     ['title' => "To Kill a Mockingbird", 'author' => "Harper Lee", 'year' => 1960, 'pages' => 281],
     ['title' => "1984", 'author' => "George Orwell", 'year' => 1949, 'pages' => 328],
     ['title' => "Pride and Prejudice", 'author' => "Jane Austen", 'year' => 1813, 'pages' => 432],
@@ -24,7 +24,7 @@ $books = [
     ['title' => "Moby Dick", 'author' => "Herman Melville", 'year' => 1851, 'pages' => 585]
 ];
 
-$products = [
+$productsData = [
     ['name' => "Laptop", 'price' => 999.99, 'stock' => 50, 'category' => "Electronics"],
     ['name' => "T-shirt", 'price' => 19.99, 'stock' => 200, 'category' => "Clothing"],
     ['name' => "Coffee Maker", 'price' => 89.99, 'stock' => 30, 'category' => "Appliances"],

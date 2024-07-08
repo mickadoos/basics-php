@@ -1,6 +1,6 @@
 <?php
 
-function sortItems(&$items, $key, $order = 'asc')
+function sortItems($items, $key, $order = 'asc')
 {
     usort($items, function ($a, $b) use ($key, $order) {
         if (!isset($a[$key]) || !isset($b[$key])) {
@@ -22,17 +22,19 @@ function sortItems(&$items, $key, $order = 'asc')
 
         return $order === 'desc' ? -$comparison : $comparison;
     });
+
+    return $items;
 }
 
 function comparePriorities($item1, $item2)
 {
-    $priorities = ['High' => 1, 'Medium' => 2, 'Low' => 3];
+    $priorities = ['Low' => 1, 'Medium' => 2, 'High' => 3];
     return $priorities[$item1['priority']] <=> $priorities[$item2['priority']];
 }
 
 function compareDifficulties($item1, $item2)
 {
-    $difficulties = ['Hard' => 1, 'Medium' => 2, 'Easy' => 3];
+    $difficulties = ['Easy' => 1, 'Medium' => 2, 'Hard' => 3];
     return $difficulties[$item1['difficulty']] <=> $difficulties[$item2['difficulty']];
 }
 
@@ -51,10 +53,10 @@ function compareTimeDurations($time1, $time2)
 
 //    DUMP VARIABLES
 
-function dd($vlaue)
+function dd($value)
 {
     echo '<pre>';
-    var_dump($vlaue);
+    var_dump($value);
     echo '</pre>';
 
     die();
