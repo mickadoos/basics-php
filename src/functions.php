@@ -67,3 +67,10 @@ function urlIs($value)
 {
     return $_SERVER['REQUEST_URI'] === $value;
 }
+
+function parseArrayKeys($input)
+{
+    $upperCaseString = ucfirst($input);
+
+    return preg_replace('/(?<!^)([A-Z])/', ' $1', $upperCaseString);
+}

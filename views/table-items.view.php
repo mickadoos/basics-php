@@ -6,14 +6,14 @@
     <tr>
         <?php if (!empty($items)) : ?>
             <?php foreach (array_keys($items[0]) as $header) : ?>
-                <th><?= ucfirst($header) ?></th>
+                <th><?= parseArrayKeys($header) ?></th>
             <?php endforeach; ?>
         <?php endif; ?>
     </tr>
     <?php foreach ($items as $item) : ?>
         <tr>
-            <?php foreach ($item as $category) : ?>
-                <td><?= $category ?></td>
+            <?php foreach ($item as $key) : ?>
+                <td><?= $key ?></td>
             <?php endforeach; ?>
         </tr>
     <?php endforeach; ?>

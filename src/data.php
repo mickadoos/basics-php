@@ -2,7 +2,7 @@
 
 $tasksData = [
     ['name' => "Working", 'time' => "8h", 'priority' => "High", 'deadline' => "2023-07-15"],
-    ['name' => "Cooking", 'time' => "1h", 'priority' => "Medium", 'deadline' => "2020-08-10"],
+    ['name' => "Cooking",    'time' => "1h", 'priority' => "Medium", 'deadline' => "2020-08-10"],
     ['name' => "Tidying", 'time' => "30min", 'priority' => "Low", 'deadline' => "2023-07-12"],
     ['name' => "Cleaning", 'time' => "2h", 'priority' => "High", 'deadline' => "2024-07-11"],
     ['name' => "Grocery", 'time' => "1h", 'priority' => "Medium", 'deadline' => "2024-02-09"]
