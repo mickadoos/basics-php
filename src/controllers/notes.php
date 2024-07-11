@@ -4,11 +4,11 @@ $config = require(BASE_PATH . '/bootstrap/config.php');
 $db = new Database($config['database']);
 
 
-$query = "select * from meals";
+$query = "select * from notes";
 $items = $db->query($query)->fetchAll();
 $tableKey = $db->getTableKey($query);
 
-$heading = "Meals List";
+$heading = "Notes List";
 
 $items = sortItems($items, 'priority', 'asc');
 

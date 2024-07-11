@@ -8,13 +8,11 @@ require BASE_PATH ."/src/Database.php";
 
 require BASE_PATH . "/src/router.php";
 
-$config = require(BASE_PATH . '/bootstrap/config.php');
-//    connect to our MySQL database
-$db = new Database($config['database']);
 
-$id = $_GET['id'];
-$query = "select * from posts where id = :id";
 
-$posts = $db->query($query, ['id' => $id])->fetchAll();
-
-dd($posts);
+//$id = $_GET['id'];
+//$query = "select * from posts where id = :id";
+//
+//$posts = $db->query($query, ['id' => $id])->fetchAll();
+//
+//dd($posts);

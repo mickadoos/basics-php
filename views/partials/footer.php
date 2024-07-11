@@ -1,3 +1,3 @@
 </body>
-<script src="/assets/js/sort.js"></script>
+<script src="/assets/js/row-link.js"></script>
 </html>

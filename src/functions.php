@@ -70,6 +70,8 @@ function urlIs($value)
 
 function parseArrayKeys($input)
 {
+    $input = str_replace(['_', ' '], ' ', $input);
+
     $upperCaseString = ucfirst($input);
 
     return preg_replace('/(?<!^)([A-Z])/', ' $1', $upperCaseString);

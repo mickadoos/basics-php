@@ -22,4 +22,22 @@ class Database
 
         return $statement;
     }
+
+    public function getTableName($query)
+    {
+        if (preg_match('/\bfrom\s+`?(\w+)`?/i', $query, $matches)) {
+            $tableName = $matches[1];
+            return $tableName;
+        }
+        return null;
+    }
+
+    public function getTableKey($query)
+    {
+        if (preg_match('/\bfrom\s+`?(\w+)`?/i', $query, $matches)) {
+            $tableName = $matches[1];
+            return rtrim($tableName, 's');
+        }
+        return null;
+    }
 }

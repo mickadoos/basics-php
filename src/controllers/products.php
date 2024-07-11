@@ -1,7 +1,15 @@
 <?php
 
+$config = require(BASE_PATH . '/bootstrap/config.php');
+$db = new Database($config['database']);
+
+
+$query = "select * from products";
+$items = $db->query($query)->fetchAll();
+$tableKey = $db->getTableKey($query);
+
 $heading = "Products List";
-$items = $productsData;
-$items = sortItems($items, 'stock', 'asc');
+
+$items = sortItems($items, 'priority', 'asc');
 
 require BASE_PATH . "/views/table-items.view.php";

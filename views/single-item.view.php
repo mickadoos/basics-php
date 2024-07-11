@@ -16,7 +16,7 @@
             <?php foreach ($item as $key) : ?>
                 <td class="table__items-data"><?= $key ?></td>
             <?php endforeach; ?>
-            <td class="table__items-data"><a href=<?="/{$tableKey}?id={$item['id']}"?>>More</a></td>
+            <td class="table__items-data"><a href=<?= "/{$tableName}" ?>>Go back</a></td>
         </tr>
     <?php endforeach; ?>
 </table>
