@@ -3,6 +3,7 @@
 $config = require(BASE_PATH . '/bootstrap/config.php');
 $db = new Database($config['database']);
 
+
 $id = $_GET['id'];
 $currentUserId = 1;
 
@@ -15,5 +16,6 @@ $tableKey = $db->getTableKey($query);
 $tableName = $db->getTableName($query);
 
 $heading = "Note";
+
 
 require BASE_PATH . "/views/single-item.view.php";

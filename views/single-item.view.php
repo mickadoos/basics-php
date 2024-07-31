@@ -4,21 +4,19 @@
 <h1><?= $heading ?></h1>
 <table class="table__items">
     <tr class="table__items-head">
-        <?php if (!empty($items)) : ?>
-            <?php foreach (array_keys($items[0]) as $header) : ?>
-                <th class="table__items-header"><?= parseArrayKeys($header) ?></th>
+        <?php if (!empty($item)) : ?>
+            <?php foreach (array_keys($item) as $header) : ?>
+                <th class="table__items-header"><?= strToHeading($header) ?></th>
             <?php endforeach; ?>
             <th class="table__items-header">Link</th>
         <?php endif; ?>
     </tr>
-    <?php foreach ($items as $item) : ?>
-        <tr class="table__items-row" data-id="<?= $item['id'] ?>">
-            <?php foreach ($item as $key) : ?>
-                <td class="table__items-data"><?= $key ?></td>
-            <?php endforeach; ?>
-            <td class="table__items-data"><a href=<?= "/{$tableName}" ?>>Go back</a></td>
-        </tr>
-    <?php endforeach; ?>
+    <tr class="table__items-row">
+        <?php foreach ($item as $value) : ?>
+            <td class="table__items-data"><?= htmlspecialchars($value) ?></td>
+        <?php endforeach; ?>
+        <td class="table__items-data"><a href=<?= "/{$tableName}" ?>>Go back</a></td>
+    </tr>
 </table>
 
 <?php require "partials/footer.php" ?>

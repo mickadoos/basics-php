@@ -6,7 +6,7 @@
     <tr class="table__items-head">
         <?php if (!empty($items)) : ?>
             <?php foreach (array_keys($items[0]) as $header) : ?>
-                <th class="table__items-header"><?= parseArrayKeys($header) ?></th>
+                <th class="table__items-header"><?= strToHeading($header) ?></th>
             <?php endforeach; ?>
             <th class="table__items-header">Link</th>
         <?php endif; ?>
@@ -14,7 +14,7 @@
     <?php foreach ($items as $item) : ?>
         <tr class="table__items-row" data-id="<?= $item['id'] ?>">
             <?php foreach ($item as $key) : ?>
-                <td class="table__items-data"><?= $key ?></td>
+                <td class="table__items-data"><?= htmlspecialchars($key) ?></td>
             <?php endforeach; ?>
             <td class="table__items-data"><a href=<?="/{$tableKey}?id={$item['id']}"?>>More</a></td>
         </tr>

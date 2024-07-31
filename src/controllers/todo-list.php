@@ -5,7 +5,7 @@ $db = new Database($config['database']);
 
 
 $query = "select * from tasks";
-$items = $db->query($query)->fetchAll();
+$items = $db->query($query)->get();
 $tableKey = $db->getTableKey($query);
 
 $heading = "Tasks List";

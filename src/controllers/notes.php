@@ -3,9 +3,8 @@
 $config = require(BASE_PATH . '/bootstrap/config.php');
 $db = new Database($config['database']);
 
-
 $query = "select * from notes";
-$items = $db->query($query)->fetchAll();
+$items = $db->query($query)->get();
 $tableKey = $db->getTableKey($query);
 
 $heading = "Notes List";

@@ -61,14 +61,21 @@ function dd($value)
 
     die();
 }
+//    AUTHORIZATION
 
+function authorize($condition, $status = Response::FORBIDDEN)
+{
+    if (! $condition) {
+        abort($status);
+    }
+}
 //    UTILS
 function urlIs($value)
 {
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function parseArrayKeys($input)
+function strToHeading($input)
 {
     $input = str_replace(['_', ' '], ' ', $input);
 
