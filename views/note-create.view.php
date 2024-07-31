@@ -9,7 +9,7 @@
             <textarea id="body" name="body" class="form__textarea"
                       placeholder="you@example.com"><?= $_POST['body'] ?? '' ?></textarea>
             <?php if (isset($errors['body'])) : ?>
-                <p><?= $errors['body'] ?></p>
+                <p class="input__error"><?= $errors['body'] ?></p>
             <?php endif; ?>
         </div>
         <button type="submit" class="form__button">Save</button>
