@@ -18,4 +18,4 @@ $tableName = $db->getTableName($query);
 $heading = "Note";
 
 
-require BASE_PATH . "/views/single-item.view.php";
+require BASE_PATH . "/views/items/show.view.php";
