@@ -1,14 +1,18 @@
 <?php
 
-$config = require(BASE_PATH . '/bootstrap/config.php');
+use Core\Database;
+
+$config = require(base_path('/bootstrap/config.php'));
 $db = new Database($config['database']);
 
 $query = "select * from notes";
 $items = $db->query($query)->get();
 $tableKey = $db->getTableKey($query);
 
-$heading = "Notes List";
-
 $items = sortItems($items, 'priority', 'asc');
 
-require BASE_PATH . "/views/table-items.view.php";
+view('items/index.view.php', [
+    'heading' => 'Notes List',
+    'items' => $items,
+    'tableKey' => $db->getTableKey($query),
+]);

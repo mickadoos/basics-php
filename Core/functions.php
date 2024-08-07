@@ -1,5 +1,7 @@
 <?php
 
+use Core\Response;
+
 function sortItems($items, $key, $order = 'asc')
 {
     usort($items, function ($a, $b) use ($key, $order) {
@@ -82,4 +84,25 @@ function strToHeading($input)
     $upperCaseString = ucfirst($input);
 
     return preg_replace('/(?<!^)([A-Z])/', ' $1', $upperCaseString);
+}
+
+function base_path($path)
+{
+    return BASE_PATH . $path;
+}
+
+function view($path, $attributes = [])
+{
+    extract($attributes);
+
+    require base_path('/views/' . $path);
+}
+
+function abort($code = 404)
+{
+    http_response_code($code);
+
+    require base_path("/views/{$code}.view.php");
+
+    die();
 }

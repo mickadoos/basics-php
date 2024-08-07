@@ -1,6 +1,3 @@
-<?php require "partials/head.php" ?>
-<?php require "partials/nav.php" ?>
-
 <h1><?= $heading ?></h1>
 <table class="table__items">
     <tr class="table__items-head">
@@ -16,9 +13,7 @@
             <?php foreach ($item as $key) : ?>
                 <td class="table__items-data"><?= htmlspecialchars($key) ?></td>
             <?php endforeach; ?>
-            <td class="table__items-data"><a href=<?="/{$tableKey}?id={$item['id']}"?>>More</a></td>
+            <td class="table__items-data"><a href=<?= "/{$tableKey}?id={$item['id']}" ?>>More</a></td>
         </tr>
     <?php endforeach; ?>
 </table>
-
-<?php require "partials/footer.php" ?>

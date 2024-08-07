@@ -1,6 +1,3 @@
-<?php require "partials/head.php" ?>
-<?php require "partials/nav.php" ?>
-
 <h1><?= $heading ?></h1>
 <table class="table__items">
     <tr class="table__items-head">
@@ -9,6 +6,7 @@
                 <th class="table__items-header"><?= strToHeading($header) ?></th>
             <?php endforeach; ?>
             <th class="table__items-header">Link</th>
+            <th class="table__items-header">Delete</th>
         <?php endif; ?>
     </tr>
     <tr class="table__items-row">
@@ -16,7 +14,12 @@
             <td class="table__items-data"><?= htmlspecialchars($value) ?></td>
         <?php endforeach; ?>
         <td class="table__items-data"><a href=<?= "/{$tableName}" ?>>Go back</a></td>
+        <td class="table__items-data">
+            <form method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                <button id="btn-delete">Delete</button>
+            </form>
+        </td>
     </tr>
 </table>
-
-<?php require "partials/footer.php" ?>

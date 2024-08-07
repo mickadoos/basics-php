@@ -1,13 +1,8 @@
 <?php
 
-return [
-    '/' => '/src/controllers/todo-list.php',
-    '/meals' => '/src/controllers/meals.php',
-    '/products' => '/src/controllers/products.php',
-    '/notes' => '/src/controllers/notes.php',
-    '/notes/create' => '/src/controllers/note-create.php',
-    '/note' => '/src/controllers/note.php',
-    '/items' => '/src/controllers/items.php',
-    '/item' => '/src/controllers/item.php',
-
-];
+$router->get('/', '/src/controllers/notes/index.php');
+$router->get('/notes', '/src/controllers/notes/index.php');
+$router->get('/note', '/src/controllers/notes/show.php');
+$router->delete('/note', '/src/controllers/notes/destroy.php');
+$router->get('/notes/create', '/src/controllers/notes/create.php');
+$router->post('/notes', '/src/controllers/notes/store.php');

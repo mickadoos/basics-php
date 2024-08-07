@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class MenuController
 {
     public $menuItems;
