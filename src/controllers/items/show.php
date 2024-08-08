@@ -1,8 +1,8 @@
 <?php
 
-$config = require(BASE_PATH . '/bootstrap/config.php');
-$db = new Database($config['database']);
+use Core\App;
 
+$db = App::resolve('Core\Database');
 
 $id = $_GET['id'];
 $currentUserId = 1;

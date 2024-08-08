@@ -1,9 +1,5 @@
 <?php
 
-$config = require(BASE_PATH . '/bootstrap/config.php');
-$db = new Database($config['database']);
-
-
 //$table = $_GET()
 $query = "select * from tasks";
 $items = $db->query($query)->get();

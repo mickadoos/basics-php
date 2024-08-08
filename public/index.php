@@ -23,6 +23,7 @@ spl_autoload_register(function ($class) {
     }
 });
 
+require base_path('/src/bootstrap.php');
 
 $menuController = new MenuController();
 $menuItems = $menuController->getMenuItems();
