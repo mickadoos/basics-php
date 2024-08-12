@@ -7,6 +7,7 @@
 .main__title {
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .form {
@@ -35,18 +36,38 @@
     resize: vertical;
 }
 
-.form__button {
-    background-color: #5856d6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
+.form__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.form__button:hover {
+.form__button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.form__button--save {
+    background-color: #5856d6;
+    color: white;
+}
+
+.form__button--cancel {
+    background-color: #d0d0d0;
+    color: white;
+    text-decoration: none;
+}
+
+.form__button--save:hover {
     background-color: #4745b3;
+}
+
+.form__button--delete {
+    background: none;
+    color: red;
 }
 
 .input__error {

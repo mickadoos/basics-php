@@ -6,7 +6,7 @@
                 <th class="table__items-header"><?= strToHeading($header) ?></th>
             <?php endforeach; ?>
             <th class="table__items-header">Link</th>
-            <th class="table__items-header">Delete</th>
+            <th class="table__items-header">Edit</th>
         <?php endif; ?>
     </tr>
     <tr class="table__items-row">
@@ -15,11 +15,7 @@
         <?php endforeach; ?>
         <td class="table__items-data"><a href=<?= "/{$tableName}" ?>>Go back</a></td>
         <td class="table__items-data">
-            <form method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="hidden" name="id" value="<?= $item['id'] ?>">
-                <button id="btn-delete">Delete</button>
-            </form>
+            <a id="btn-edit" href="/note/edit?id=<?= $item['id'] ?>">Edit Note</a>
         </td>
     </tr>
 </table>
