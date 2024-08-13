@@ -11,6 +11,9 @@
         <?php endforeach; ?>
     </div>
     <div class="nav__profile">
-        <img src="/assets/images/usuario.png" alt="user-icon">
+        <a href="/register">
+            <img src="/assets/images/usuario.png" alt="user-icon">
+        </a>
+        <p>Hello, <?= ($_SESSION['user']['email']) ?? 'Guest user'; ?></p>
     </div>
 </div>

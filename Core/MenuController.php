@@ -11,6 +11,7 @@ class MenuController
         $this->menuItems = [
             ['url' => '/notes', 'label' => 'Notes'],
             ['url' => '/notes/create', 'label' => 'Add Notes'],
+            ['url' => '/register', 'label' => 'Register'],
         ];
     }
 

@@ -7,6 +7,8 @@ require __DIR__ . '/../bootstrap/constants.php';
 
 require BASE_PATH . '/Core/functions.php';
 
+session_start();
+
 spl_autoload_register(function ($class) {
 
     if (strpos($class, '\\') === false) {

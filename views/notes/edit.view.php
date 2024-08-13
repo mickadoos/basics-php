@@ -19,6 +19,6 @@
     <form class="form" method="POST" action="/note">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="id" value="<?= $item['id'] ?>">
-        <button id="btn-delete" class="form__button form__button--delete">Delete</button>
+         <button id="btn-delete" class="form__button form__button--delete">Delete</button>
     </form>
 </main>
