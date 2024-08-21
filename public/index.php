@@ -2,6 +2,7 @@
 
 use Core\MenuController;
 use Core\Router;
+use Core\Session;
 
 require __DIR__ . '/../bootstrap/constants.php';
 
@@ -42,3 +43,5 @@ view('partials/nav.php', [
 ]);
 $router->route($uri, $method);
 view('partials/footer.php');
+
+Session::unflash();

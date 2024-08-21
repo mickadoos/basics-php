@@ -4,7 +4,7 @@
         <div class="form__group">
             <label for="email" class="form__label">Email</label>
             <input type="email" id="email" name="email" class="form__input"
-                   placeholder="Enter your email" value="test@mail.com">
+                   placeholder="Enter your email" value="<?= old('email', 'test@mail.com') ?>">
             <?php if (isset($errors['email'])) : ?>
                 <p class="input__error"><?= $errors['email'] ?></p>
             <?php endif; ?>
