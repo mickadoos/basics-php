@@ -11,9 +11,17 @@
         <?php endforeach; ?>
     </div>
     <div class="nav__profile">
-        <a href="/register">
-            <img src="/assets/images/usuario.png" alt="user-icon">
-        </a>
-        <p>Hello, <?= ($_SESSION['user']['email']) ?? 'Guest user'; ?></p>
+        <?php if (isset($_SESSION['user'])) : ?>
+            <form method="POST" action="/session">
+                <input type="hidden" name="_method" value="DELETE">
+                <button>Log out</button>
+            </form>
+            <p>Hello, <?= htmlspecialchars($_SESSION['user']['email']) ?></p>
+        <?php else : ?>
+            <a href="/login">
+                <img src="/assets/images/login-icon.png" alt="user-icon">
+            </a>
+            <p>Hello, Guest user</p>
+        <?php endif; ?>
     </div>
 </div>

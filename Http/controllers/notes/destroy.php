@@ -5,7 +5,7 @@ use Core\App;
 $db = App::resolve('Core\Database');
 
 $id = $_POST['id'];
-$currentUserId = 1;
+$currentUserId = $_SESSION['user']['id'];
 
 $query = "select * from notes where id = :id";
 $item = $db->query($query, ['id' => $id])->findOrFail();

@@ -1,6 +1,7 @@
 <?php
 
 use Core\App;
+use Core\Authenticator;
 use Core\Database;
 use Core\Validator;
 
@@ -32,24 +33,21 @@ $user = $db->query('select * from users where email = :email', [
 ])->find();
 
 if ($user) {
-
     $_SESSION['user'] = [
-        'email' => $email
-    ];
-
-    header('location: /');
-    exit();
-} else {
-
-    $db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
-        'email' => $email,
-        'password' => password_hash($password, PASSWORD_BCRYPT)
-    ]);
-
-    $_SESSION['user'] = [
+        'id' => $user['id'],
         'email' => $email
     ];
 
     header('location: /');
     exit();
 }
+
+$db->query('INSERT INTO users(email, password) VALUES(:email, :password)', [
+    'email' => $email,
+    'password' => password_hash($password, PASSWORD_BCRYPT)
+]);
+
+Authenticator::login($user);
+
+header('location: /');
+exit();
