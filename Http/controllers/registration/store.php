@@ -20,10 +20,12 @@ if (!Validator::string($_POST['password'], 7, 255)) {
 }
 
 if (!empty($errors)) {
-    return view('registration/create.view.php', [
+   view('registration/create.view.php', [
         'heading' => 'Register',
         'errors' => $errors
     ]);
+
+   exit();
 }
 
 $db = App::resolve(Database::class);

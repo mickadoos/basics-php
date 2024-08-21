@@ -20,13 +20,15 @@ if (!Validator::string($_POST['body'], 1, 1000  )) {
 }
 
 if (count($errors)) {
-   return view('notes/edit.view.php', [
+   view('notes/edit.view.php', [
         'heading' => 'Edit Note',
         'item' => $item,
         'errors' => $errors,
         'tableKey' => $db->getTableKey($query),
         'tableName' => $db->getTableName($query),
     ]);
+
+   exit();
 }
 
 $db->query('update notes set body = :body where id = :id', [
