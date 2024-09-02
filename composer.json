@@ -1,0 +1,16 @@
+{
+    "name": "yabelrodriguez/basics-php",
+    "authors": [
+        {
+            "name": "yabelrodriguez",
+            "email": "yabel.rodriguez@the-cocktail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}

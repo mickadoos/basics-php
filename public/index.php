@@ -6,25 +6,12 @@ use Core\Session;
 
 require __DIR__ . '/../bootstrap/constants.php';
 
+require BASE_PATH . '/vendor/autoload.php';
+
 require BASE_PATH . '/Core/functions.php';
 
 session_start();
 
-spl_autoload_register(function ($class) {
-
-    if (strpos($class, '\\') === false) {
-        return;
-    }
-
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    $file = base_path("/{$class}.php");
-
-    if (file_exists($file)) {
-        require $file;
-    } else {
-        throw new Exception("Class file not found: {$file}");
-    }
-});
 
 require base_path('/src/bootstrap.php');
 
